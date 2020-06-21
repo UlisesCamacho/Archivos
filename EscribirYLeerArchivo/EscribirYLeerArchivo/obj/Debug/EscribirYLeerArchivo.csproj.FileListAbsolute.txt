@@ -1,0 +1,6 @@
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivo\EscribirYLeerArchivo\bin\Debug\EscribirYLeerArchivo.exe.config
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivo\EscribirYLeerArchivo\bin\Debug\EscribirYLeerArchivo.exe
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivo\EscribirYLeerArchivo\bin\Debug\EscribirYLeerArchivo.pdb
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivo\EscribirYLeerArchivo\obj\Debug\EscribirYLeerArchivo.csprojResolveAssemblyReference.cache
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivo\EscribirYLeerArchivo\obj\Debug\EscribirYLeerArchivo.exe
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivo\EscribirYLeerArchivo\obj\Debug\EscribirYLeerArchivo.pdb

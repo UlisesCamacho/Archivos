@@ -1,0 +1,6 @@
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivoBinario\EscribirYLeerArchivoBinario\bin\Debug\EscribirYLeerArchivoBinario.exe.config
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivoBinario\EscribirYLeerArchivoBinario\bin\Debug\EscribirYLeerArchivoBinario.exe
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivoBinario\EscribirYLeerArchivoBinario\bin\Debug\EscribirYLeerArchivoBinario.pdb
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivoBinario\EscribirYLeerArchivoBinario\obj\Debug\EscribirYLeerArchivoBinario.csprojResolveAssemblyReference.cache
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivoBinario\EscribirYLeerArchivoBinario\obj\Debug\EscribirYLeerArchivoBinario.exe
+C:\Users\Ulises\Documents\Ulises\Archivos\EscribirYLeerArchivoBinario\EscribirYLeerArchivoBinario\obj\Debug\EscribirYLeerArchivoBinario.pdb

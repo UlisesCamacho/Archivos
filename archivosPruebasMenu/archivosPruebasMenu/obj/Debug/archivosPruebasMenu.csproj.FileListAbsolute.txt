@@ -1,0 +1,6 @@
+C:\Users\Ulises\Documents\Ulises\Archivos\archivosPruebasMenu\archivosPruebasMenu\bin\Debug\archivosPruebasMenu.exe.config
+C:\Users\Ulises\Documents\Ulises\Archivos\archivosPruebasMenu\archivosPruebasMenu\bin\Debug\archivosPruebasMenu.exe
+C:\Users\Ulises\Documents\Ulises\Archivos\archivosPruebasMenu\archivosPruebasMenu\bin\Debug\archivosPruebasMenu.pdb
+C:\Users\Ulises\Documents\Ulises\Archivos\archivosPruebasMenu\archivosPruebasMenu\obj\Debug\archivosPruebasMenu.csprojResolveAssemblyReference.cache
+C:\Users\Ulises\Documents\Ulises\Archivos\archivosPruebasMenu\archivosPruebasMenu\obj\Debug\archivosPruebasMenu.exe
+C:\Users\Ulises\Documents\Ulises\Archivos\archivosPruebasMenu\archivosPruebasMenu\obj\Debug\archivosPruebasMenu.pdb
