@@ -18,6 +18,7 @@ namespace archivosPruebasMenu
             {
                 Console.WriteLine("\n MENU");
                 Console.WriteLine("\n" +
+                    "\n 0.-Ver Archivos" +
                     "\n 1.-Abrir Archivo" +
                     "\n 2.-Crear Archivo" +
                     "\n 3.-Modificar Archivo" +
@@ -28,12 +29,21 @@ namespace archivosPruebasMenu
 
                 switch(op)
                 {
+                    case 0:
+                        DirectoryInfo di = new DirectoryInfo(@"C:\Users\Ulises\Documents\Ulises\Archivos\Archivos\archivosPruebasMenu\archivosPruebasMenu\bin\Debug");
+                        foreach( var fi in di.GetFiles("*.bin*"))
+                        {
+                            Console.WriteLine(fi.Name);
+                        }
+
+                        break;
                     case 1:
                         Console.WriteLine("Nombre del Archivo: ");
-                        String nombreArchivo1 = Console.ReadLine();
+                        String nombreArchivo1 = Console.ReadLine() + ".bin";
                         FileStream streamReader = new FileStream(nombreArchivo1,
                         FileMode.Open, FileAccess.Read);
                         BinaryReader reader = new BinaryReader(streamReader);
+                        Console.WriteLine("contenido del archivo: ");
                         Console.Write(reader.ReadString());
                         reader.Close();
                         streamReader.Close();
@@ -41,7 +51,7 @@ namespace archivosPruebasMenu
                     case 2:
 
                         Console.WriteLine("Nombre del Archivo: ");
-                        String nombreArchivo = Console.ReadLine();
+                        String nombreArchivo = Console.ReadLine() + ".bin";
                         Console.WriteLine("Contenido del Archivo: ");
                         String contenidoArchivo = Console.ReadLine();
                         FileStream stream = new FileStream(nombreArchivo,FileMode.Create, FileAccess.Write);
@@ -51,11 +61,79 @@ namespace archivosPruebasMenu
                         stream.Close();
                         break;
                     case 3:
-                       
-                        break;
-                        
-                }
+                        int subop=0;
+                        Console.WriteLine("Que deseas modificar? " +
+                        "\n 1.-Nombre Archivo" +
+                        "\n 2.-Contenido" +
+                        "\n 3.-Ambos");
+                        subop = Convert.ToInt32(Console.ReadLine());
 
+                        switch (subop)
+                        {
+                            case 1:
+                                String original = "";
+                                String nuevo = "";
+                                Console.WriteLine("Dame el nombre del archivo a modificar: ");
+                                original = Console.ReadLine() + ".bin";
+                                if (File.Exists(original))
+                                {
+                                    Console.WriteLine("Dame el nuevo nombre del archivo");
+                                    nuevo = Console.ReadLine() + ".bin";
+                                    if (!File.Exists(nuevo))
+                                    {
+                                        File.Move(original, nuevo);
+                                    }
+                                    else
+                                    {
+                                        Console.Write("Error");
+                                    }
+
+                                }
+                                else
+                                {
+                                    Console.Write("Error");
+                                }
+
+                                break;
+                            case 2:
+                                String nombreArchivos = "";
+                                String contenidoArchivos = "";
+                                Console.WriteLine("Dame el nombre del archivo a modificar el contenido: ");
+                                nombreArchivos = Console.ReadLine() + ".bin";
+                                
+                                    using (writer = new BinaryWriter(new FileStream(nombreArchivos, FileMode.Open)))//Abre el archivo con el BinaryWriter
+                                    {
+                                        writer.Seek(0, SeekOrigin.Begin);//Posiciona el grabado del archivo en la dirección actual
+                                        Console.WriteLine("Contenido del Archivo: ");
+                                        contenidoArchivos = Console.ReadLine();
+                                        writer.Write(contenidoArchivos);
+                                        writer.Seek(0, SeekOrigin.End);
+
+                                    }
+                               
+
+                                break;
+
+                            default:
+                                break;
+                        }
+                        break;
+                            case 4:
+                            String nombreAuxiliar = "";
+                            Console.WriteLine("Dame el nombre del archivo que deseas eliminar: ");
+                            nombreAuxiliar = Console.ReadLine() + ".bin";
+                            if(File.Exists(nombreAuxiliar))
+                            {
+                                File.Delete(nombreAuxiliar);
+                            }    
+                            break;
+
+                    default:
+
+                        break;
+
+                }
+                
                     
             } while (op != 5);
         }
