@@ -30,7 +30,7 @@ namespace archivosPruebasMenu
                 switch(op)
                 {
                     case 0:
-                        DirectoryInfo di = new DirectoryInfo(@"C:\Users\Ulises\Documents\Ulises\Archivos\Archivos\archivosPruebasMenu\archivosPruebasMenu\bin\Debug");
+                        DirectoryInfo di = new DirectoryInfo(@"C:\Users\Ulises\Documents\Ulises\Archivos\Archivos\archivosPruebasMenu\archivosPruebasMenu\bin\Debug"); //listar los archivos!
                         foreach( var fi in di.GetFiles("*.bin*"))
                         {
                             Console.WriteLine(fi.Name);
@@ -64,8 +64,7 @@ namespace archivosPruebasMenu
                         int subop=0;
                         Console.WriteLine("Que deseas modificar? " +
                         "\n 1.-Nombre Archivo" +
-                        "\n 2.-Contenido" +
-                        "\n 3.-Ambos");
+                        "\n 2.-Contenido");
                         subop = Convert.ToInt32(Console.ReadLine());
 
                         switch (subop)
@@ -100,7 +99,8 @@ namespace archivosPruebasMenu
                                 String contenidoArchivos = "";
                                 Console.WriteLine("Dame el nombre del archivo a modificar el contenido: ");
                                 nombreArchivos = Console.ReadLine() + ".bin";
-                                
+                                try
+                                {
                                     using (writer = new BinaryWriter(new FileStream(nombreArchivos, FileMode.Open)))//Abre el archivo con el BinaryWriter
                                     {
                                         writer.Seek(0, SeekOrigin.Begin);//Posiciona el grabado del archivo en la dirección actual
@@ -110,6 +110,12 @@ namespace archivosPruebasMenu
                                         writer.Seek(0, SeekOrigin.End);
 
                                     }
+                                }
+                                catch(Exception e)
+                                {
+                                    Console.WriteLine(e.Message);
+                                }
+                                    
                                
 
                                 break;

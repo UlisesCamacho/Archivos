@@ -4,3 +4,6 @@ C:\Users\Ulises\Documents\Ulises\Archivos\ArchivosPrueba1\ArchivosPrueba1\bin\De
 C:\Users\Ulises\Documents\Ulises\Archivos\ArchivosPrueba1\ArchivosPrueba1\obj\Debug\ArchivosPrueba1.csprojResolveAssemblyReference.cache
 C:\Users\Ulises\Documents\Ulises\Archivos\ArchivosPrueba1\ArchivosPrueba1\obj\Debug\ArchivosPrueba1.exe
 C:\Users\Ulises\Documents\Ulises\Archivos\ArchivosPrueba1\ArchivosPrueba1\obj\Debug\ArchivosPrueba1.pdb
+C:\Users\Ulises\Documents\Ulises\Archivos\Archivos\ArchivosPrueba1\ArchivosPrueba1\bin\Debug\ArchivosPrueba1.exe.config
+C:\Users\Ulises\Documents\Ulises\Archivos\Archivos\ArchivosPrueba1\ArchivosPrueba1\obj\Debug\ArchivosPrueba1.exe
+C:\Users\Ulises\Documents\Ulises\Archivos\Archivos\ArchivosPrueba1\ArchivosPrueba1\obj\Debug\ArchivosPrueba1.pdb

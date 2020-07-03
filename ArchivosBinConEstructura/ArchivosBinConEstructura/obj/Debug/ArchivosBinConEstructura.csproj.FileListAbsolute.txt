@@ -1,0 +1,6 @@
+C:\Users\Ulises\Documents\Ulises\Archivos\ArchivosBinConEstructura\ArchivosBinConEstructura\bin\Debug\ArchivosBinConEstructura.exe.config
+C:\Users\Ulises\Documents\Ulises\Archivos\ArchivosBinConEstructura\ArchivosBinConEstructura\bin\Debug\ArchivosBinConEstructura.exe
+C:\Users\Ulises\Documents\Ulises\Archivos\ArchivosBinConEstructura\ArchivosBinConEstructura\bin\Debug\ArchivosBinConEstructura.pdb
+C:\Users\Ulises\Documents\Ulises\Archivos\ArchivosBinConEstructura\ArchivosBinConEstructura\obj\Debug\ArchivosBinConEstructura.csprojResolveAssemblyReference.cache
+C:\Users\Ulises\Documents\Ulises\Archivos\ArchivosBinConEstructura\ArchivosBinConEstructura\obj\Debug\ArchivosBinConEstructura.exe
+C:\Users\Ulises\Documents\Ulises\Archivos\ArchivosBinConEstructura\ArchivosBinConEstructura\obj\Debug\ArchivosBinConEstructura.pdb
