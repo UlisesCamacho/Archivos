@@ -17,7 +17,9 @@ namespace ArchivosBinConEstructura
             {
                 Console.WriteLine("\n Menu");
                 Console.WriteLine("\n 1.-Crear&Guardar " +
-                    "\n 2.-Abrir");
+                    "\n 2.-Abrir" + 
+                    "\n 3.-Salir");
+                
                 Console.WriteLine("\n Dame la opcion");
                 opMenu = int.Parse(Console.ReadLine());
                 switch (opMenu)
@@ -61,9 +63,10 @@ namespace ArchivosBinConEstructura
                             }
 
                         }
-                        newname = name.Substring(0, contador);
-
-                        Console.WriteLine(newname + age);
+                       // newname = name.Substring(0, contador);
+                       name=name.Split(' ').First();
+                        //Console.WriteLine(newname + age);
+                        Console.WriteLine(name + age);
                         stream1.Close();
                         bw.Close();
 
