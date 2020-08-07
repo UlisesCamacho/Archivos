@@ -11,14 +11,20 @@ using System.IO;
 
 namespace archivosFormMenu
 {
-    public partial class Form1 : Form
+    public partial class archivos : Form
     {
         private BinaryWriter bw;
         private BinaryReader br;
         private String nombreArchivo;
         private cuadroDialogo CuadroDialogo;
-        public Form1()
+        private List<Int32> listEdad;
+        private List<String> listNombre;
+
+
+        public archivos()
         {
+            listNombre = new List<String>();
+            listEdad = new List<Int32>();
             InitializeComponent();
         }
 
@@ -28,7 +34,7 @@ namespace archivosFormMenu
             {
                 case "Crear":
                     
-                    this.CuadroDialogo = new cuadroDialogo();
+                    this.CuadroDialogo = new cuadroDialogo("Crear Archivo");
                     if(CuadroDialogo.ShowDialog().Equals(DialogResult.OK))
                     {
                         this.nombreArchivo = CuadroDialogo.nombreA + ".bin";
@@ -51,7 +57,8 @@ namespace archivosFormMenu
                     }
                     break;
                 case "Abrir":
-                    this.CuadroDialogo = new cuadroDialogo();
+                    this.CuadroDialogo = new cuadroDialogo("Abrir Archivo");
+                    dataGridView1.Rows.Clear();
                     if(this.CuadroDialogo.ShowDialog().Equals(DialogResult.OK))
                     {
                         this.nombreArchivo = CuadroDialogo.nombreA + ".bin";
@@ -68,31 +75,62 @@ namespace archivosFormMenu
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            String nombre = Nombre.Text;
-            for (int i = nombre.Length; i < 30; i++)
-                nombre += " ";
-            Int32 edad = Int32.Parse(Edad.Text);
-            FileStream file = new FileStream(this.nombreArchivo, FileMode.Create, FileAccess.Write);
-            bw = new BinaryWriter(file);
-            bw.Write(nombre);
-            bw.Write(edad);
-            bw.Close();
-            file.Close();
+            dataGridView1.Rows.Clear();
             Nombre.Clear();
-            Edad.Clear();
+            Edad.Value = 0;
+            listEdad.Clear();
+            listNombre.Clear();
             MessageBox.Show("guardado");
         }
         private void leerArchivo(String nombreArch)
         {
             FileStream file = new FileStream(nombreArch, FileMode.Open, FileAccess.Read);
             br = new BinaryReader(file);
-            String name = br.ReadString();
-            int age = br.ReadInt32();
-            name = name.Split(' ').First();
-            MessageBox.Show(name + age);
+            int datos = br.ReadInt32();
+            String name = " ";
+            int age = 0;
+            for (int i = 0; i < datos; i++)
+            {
+                name = br.ReadString();
+                name = name.Split(' ').First();
+                age = br.ReadInt32();
+                dataGridView1.Rows.Add(name, age);
+            }
             file.Close();
             br.Close();
         }
 
+        private void buttonAgregar_Click(object sender, EventArgs e)
+        {
+            
+            if (!String.IsNullOrEmpty(Nombre.Text) || Edad.Value == 0)
+            {
+                
+                listNombre.Add(Nombre.Text);
+                listEdad.Add(Int32.Parse(Edad.Value.ToString()));
+                dataGridView1.Rows.Add(Nombre.Text, Edad.Value);
+                //guardado en el archivo
+                String nombre = Nombre.Text;
+                for (int i = nombre.Length; i < 30; i++)
+                    nombre += " ";
+                Int32 edad = Int32.Parse(Edad.Value.ToString());
+                FileStream file = new FileStream(this.nombreArchivo, FileMode.Open, FileAccess.Write);
+                bw = new BinaryWriter(file);
+                bw.Seek(0, SeekOrigin.Begin);//no se sobreescribe
+                bw.Write(listEdad.Count); //para mostrar datos
+                bw.Seek(0, SeekOrigin.End);
+                bw.Write(nombre);
+                bw.Write(edad);
+              //  bw.Write("\n");
+                file.Close();
+                bw.Close();
+                Nombre.Clear();
+                Edad.Value = 0;
+            }
+            else
+            {
+                MessageBox.Show("no se puede guardar un campo vacio");
+            }
+        }
     }
 }

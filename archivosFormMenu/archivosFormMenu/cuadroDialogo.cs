@@ -15,9 +15,9 @@ namespace archivosFormMenu
     {
         
 
-        public cuadroDialogo()
+        public cuadroDialogo(String titulo)
         {
-            
+            this.Text = titulo;
             InitializeComponent();
         }
         public String nombreA

@@ -1,6 +1,6 @@
 ﻿namespace archivosFormMenu
 {
-    partial class Form1
+    partial class archivos
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -32,11 +32,17 @@
             this.Crear = new System.Windows.Forms.ToolStripMenuItem();
             this.abrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Nombre = new System.Windows.Forms.TextBox();
-            this.Edad = new System.Windows.Forms.TextBox();
             this.Guardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.Edad = new System.Windows.Forms.NumericUpDown();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAgregar = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Edad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -46,7 +52,7 @@
             this.abrirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(335, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(265, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -73,20 +79,12 @@
             this.Nombre.TabIndex = 1;
             this.Nombre.Visible = false;
             // 
-            // Edad
-            // 
-            this.Edad.Location = new System.Drawing.Point(184, 65);
-            this.Edad.Name = "Edad";
-            this.Edad.Size = new System.Drawing.Size(100, 20);
-            this.Edad.TabIndex = 2;
-            this.Edad.Visible = false;
-            // 
             // Guardar
             // 
             this.Guardar.Enabled = false;
-            this.Guardar.Location = new System.Drawing.Point(119, 115);
+            this.Guardar.Location = new System.Drawing.Point(10, 288);
             this.Guardar.Name = "Guardar";
-            this.Guardar.Size = new System.Drawing.Size(75, 23);
+            this.Guardar.Size = new System.Drawing.Size(240, 23);
             this.Guardar.TabIndex = 3;
             this.Guardar.Text = "Guardar";
             this.Guardar.UseVisualStyleBackColor = true;
@@ -105,29 +103,72 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 46);
+            this.label2.Location = new System.Drawing.Point(127, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Edad";
             this.label2.Visible = false;
             // 
-            // Form1
+            // Edad
+            // 
+            this.Edad.Location = new System.Drawing.Point(130, 66);
+            this.Edad.Name = "Edad";
+            this.Edad.Size = new System.Drawing.Size(120, 20);
+            this.Edad.TabIndex = 6;
+            this.Edad.Visible = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.dataGridView1.Location = new System.Drawing.Point(10, 92);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "nombre";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Edad";
+            this.Column2.Name = "Column2";
+            // 
+            // buttonAgregar
+            // 
+            this.buttonAgregar.Location = new System.Drawing.Point(10, 249);
+            this.buttonAgregar.Name = "buttonAgregar";
+            this.buttonAgregar.Size = new System.Drawing.Size(240, 23);
+            this.buttonAgregar.TabIndex = 8;
+            this.buttonAgregar.Text = "Agregar";
+            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
+            // 
+            // archivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 165);
+            this.ClientSize = new System.Drawing.Size(265, 319);
+            this.Controls.Add(this.buttonAgregar);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Edad);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Guardar);
-            this.Controls.Add(this.Edad);
             this.Controls.Add(this.Nombre);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "archivos";
+            this.Text = "Archivos";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Edad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,10 +180,14 @@
         private System.Windows.Forms.ToolStripMenuItem Crear;
         private System.Windows.Forms.ToolStripMenuItem abrirToolStripMenuItem;
         private System.Windows.Forms.TextBox Nombre;
-        private System.Windows.Forms.TextBox Edad;
         private System.Windows.Forms.Button Guardar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown Edad;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonAgregar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
 
